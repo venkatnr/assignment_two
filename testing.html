@@ -1,0 +1,21 @@
+<script src="jquery-2.1.4.min.js"></script>
+<form id="basicForm">
+	<input type="text" name="testing">
+	<input type="submit">
+</form>
+
+<script type="text/javascript">
+  $("#basicForm").submit(function(event) {
+  	var postData = "text";
+  	$.ajax({
+    type: "GET",
+    url: "success.html",
+    success: function (data) {
+        console.log("sucess");
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+      console.log("failure");
+    }
+})
+  });
+</script>
